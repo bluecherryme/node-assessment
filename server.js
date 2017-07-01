@@ -18,6 +18,7 @@ app.get('/api/nonadmins', usersCtrl.getNonAdmins);
 app.get('/api/user_type/:userType', usersCtrl.getUsersByType);
 app.put('/api/users/:userId', usersCtrl.updateUser);
 app.post('/api/users',usersCtrl.postUser);
+app.delete('/api/users/:userId',usersCtrl.deleteUser);
 
 
 

@@ -71,10 +71,18 @@ module.exports = {
         res.status(200).json(users);
     },
 
-    postUser: function(req,res,nest){
+    postUser: function(req,res,next){
         req.body.id = id;
         id++;
         users.push(req.body);
+        res.status(200).json(users);
+    },
+
+    deleteUser: function(req,res,next){
+        var index = users.findIndex(el=>{
+            return el.id == req.params.userId;
+        });
+        users.splice(index,1);
         res.status(200).json(users);
     }
 
